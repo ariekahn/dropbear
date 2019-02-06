@@ -8,7 +8,7 @@
 # framework-mandated variables
 framework_version="2.1"
 name="dropbear"
-version="2018.76"
+version="2018.76.1"
 description="SSH server"
 depends=""
 webui=""
