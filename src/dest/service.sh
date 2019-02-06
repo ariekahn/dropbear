@@ -7,7 +7,7 @@
 
 # framework-mandated variables
 framework_version="2.1"
-name="dropbear"
+name="DropbearCustom"
 version="2018.76.1"
 description="SSH server"
 depends=""
