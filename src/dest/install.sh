@@ -20,15 +20,15 @@ set -o pipefail # propagate last error code on pipe
 set -o xtrace   # enable script tracing
 
 # copy default configuration files
-# find "${prog_dir}" -type f -name "*.default" -print | while read deffile; do
-#   basefile="$(dirname ${deffile})/$(basename ${deffile} .default)"
-#   if [ ! -f "${basefile}" ]; then
-#     cp -f "${deffile}" "${basefile}"
-#   fi
-# done
+find "${prog_dir}" -type f -name "*.default" -print | while read deffile; do
+  basefile="$(dirname ${deffile})/$(basename ${deffile} .default)"
+  if [ ! -f "${basefile}" ]; then
+    cp -f "${deffile}" "${basefile}"
+  fi
+done
 
 # generate ssh keys
-if [ ! d "${prog_dir}/etc" ]; then
+if [ ! -d "${prog_dir}/etc" ]; then
   mkdir -p "${prog_dir}/etc"
 fi
 if [ ! -f "${prog_dir}/etc/dss.key" ]; then
